@@ -4,6 +4,7 @@ const session = require('express-session');
 const port = 5000;
 const login = require('./route/Login');
 
+app.use(express.json());
 app.use(session({
     secret: 'infoware-ass',
     resave: false,

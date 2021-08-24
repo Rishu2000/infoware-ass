@@ -17,4 +17,8 @@ login.get('/', (req, res) => {
     res.json('login module.')
 })
 
+login.post('/',(req,res) => {
+    res.json(req.body);
+})
+
 module.exports = login;
