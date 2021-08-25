@@ -36,7 +36,8 @@ login.post('/', async (req,res) => {
                     req.session.Authentication = rows[0];
                     res.json({
                         Success:true,
-                        Message:rows[0].name
+                        Message:rows[0].name,
+                        Admin:rows[0].admin
                     });
                 }else{
                     req.session.destroy();

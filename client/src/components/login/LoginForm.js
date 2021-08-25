@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import FormGroup from '../form/FormGroup'
 import axios from "axios"
 
-const LoginForm = ({setUser}) => {
+const LoginForm = ({setUser, setAdmin}) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,7 +13,8 @@ const LoginForm = ({setUser}) => {
         axios.post('http://localhost:5000/login',{email,password})
             .then((res) => {
                 // console.log(res.data);
-                setUser(res.data.Message)
+                setUser(res.data.Message);
+                setAdmin(res.data.Admin);
             })
             .catch((err) => {
                 // console.dir(err);
